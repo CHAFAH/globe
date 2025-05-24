@@ -1,8 +1,4 @@
 
----
-
-
-````markdown
 #  Color Display App by Hilltop Consultancy
 
 This is a small Node.js web application that displays:
@@ -15,7 +11,7 @@ It also features a rotating Earth background to enhance the visual experience. T
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ###  1. Build the Docker image
 
@@ -37,7 +33,7 @@ http://localhost:8080
 
 ---
 
-## 🔧 Environment Variables
+##  Environment Variables
 
 | Variable   | Description                       | Default  |
 | ---------- | --------------------------------- | -------- |
@@ -50,11 +46,8 @@ http://localhost:8080
 ## 👤 Maintainer
 
 Hilltop Consultancy
-📧 [support@htconsult.dk](mailto:support@htconsult.dk)
-🌍 [https://www.htconsult.dk](https://www.htconsult.dk)
+ [support@htconsult.dk](mailto:support@htconsult.dk)
+ [https://www.htconsult.dk](https://www.htconsult.dk)
 
 ```
 
----
-
-```
