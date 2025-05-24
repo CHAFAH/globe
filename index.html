@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Display App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: {{COLOR}};
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 0;
+      animation: rotate 120s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { background-position: center top; }
+      100% { background-position: center bottom; }
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 0.5em 0;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+
+    .date-time {
+      margin-top: 25px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .calendar, .country {
+      margin-top: 40px;
+      font-size: 1.1em;
+    }
+
+    pre {
+      text-align: left;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+      color: white;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay">
+    <h1>Welcome to the Color Display App by Hill-Top Consultancy</h1>
+    <p>The current background color is: <strong>{{COLOR}}</strong></p>
+
+    <div class="info">
+      <p>Welcome to Hilltop Consultancy Color Display Application.</p>
+      <p>Address: Sylen 3, Høje Taastrup, Copenhagen</p>
+      <p>Website: <a href="https://www.htconsult.dk" target="_blank">www.htconsult.dk</a></p>
+      <p>Contact: +45 7157 3047</p>
+    </div>
+
+    <div class="date-time">
+      <p>Today Date is: <span id="current-date"></span></p>
+    </div>
+
+    <div class="calendar">
+      <h2>📅 Monthly Calendar</h2>
+      <pre>{{CALENDAR_OUTPUT}}</pre>
+    </div>
+
+    <div class="country">
+      <h2>🌍 Country Info</h2>
+      <p>{{COUNTRY_OUTPUT}}</p>
+    </div>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const formatted = now.toLocaleString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+      });
+      document.getElementById('current-date').textContent = formatted;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+</body>
+</html>

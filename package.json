@@ -1,0 +1,23 @@
+{
+  "name": "color-display-app",
+  "version": "1.1.1",
+  "description": "A configurable Node.js app to display color, calendar, and country info",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest --verbose",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "author": "Hill-Top Consultancy",
+  "license": "MIT"
+}
