@@ -9,6 +9,7 @@ COPY package.json package-lock.json* ./
 
 # Install all dependencies including node-calendar
 RUN npm install
+RUN apt update && apt install -y curl wget
 
 # Copy rest of app files
 COPY . .
